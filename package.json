@@ -1,0 +1,48 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "angular-onscreen-material-keyboard",
+  "version": "0.4.0",
+  "description": "This package is forked from ngx-material-keyboard with bug fixes and additional features",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iris0905/angular-onscreen-material-keyboard.git"
+  },
+  "author": "Iris X, Daniel M, Kenneth A",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Iris0905/angular-onscreen-material-keyboard/issues"
+  },
+  "homepage": "https://github.com/Iris0905/angular-onscreen-material-keyboard",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@angular/animations": "^8.0.0 || ^9.0.0",
+    "@angular/cdk": "^8.0.0 || ^9.0.0",
+    "@angular/common": "^8.0.0 || ^9.0.0",
+    "@angular/core": "^8.0.0 || ^9.0.0",
+    "@angular/forms": "^8.0.0 || ^9.0.0",
+    "@angular/material": "^8.0.0 || ^9.0.0",
+    "rxjs": "^6.5.2",
+    "tslib": "^1.10.0"
+  },
+  "keywords": [
+    "angular",
+    "angular8",
+    "material",
+    "keyboard",
+    "onscreen",
+    "typescript",
+    "ngx"
+  ],
+  "main": "bundles/angular-onscreen-material-keyboard.umd.js",
+  "module": "fesm5/angular-onscreen-material-keyboard.js",
+  "es2015": "fesm2015/angular-onscreen-material-keyboard.js",
+  "esm5": "esm5/angular-onscreen-material-keyboard.js",
+  "esm2015": "esm2015/angular-onscreen-material-keyboard.js",
+  "fesm5": "fesm5/angular-onscreen-material-keyboard.js",
+  "fesm2015": "fesm2015/angular-onscreen-material-keyboard.js",
+  "typings": "angular-onscreen-material-keyboard.d.ts",
+  "metadata": "angular-onscreen-material-keyboard.metadata.json",
+  "sideEffects": false
+}
