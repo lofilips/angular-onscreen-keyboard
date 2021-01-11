@@ -2867,8 +2867,7 @@
                     [exports.KeyboardClassKey.Shift, exports.KeyboardClassKey.Shift, exports.KeyboardClassKey.Shift, exports.KeyboardClassKey.Shift]
                 ],
                 [
-                    [exports.KeyboardClassKey.Space, exports.KeyboardClassKey.Space, exports.KeyboardClassKey.Space, exports.KeyboardClassKey.Space],
-                    [exports.KeyboardClassKey.AltGr, exports.KeyboardClassKey.AltGr, exports.KeyboardClassKey.AltGr, exports.KeyboardClassKey.AltGr]
+                    [exports.KeyboardClassKey.Space, exports.KeyboardClassKey.Space, exports.KeyboardClassKey.Space, exports.KeyboardClassKey.Space]
                 ]
             ],
             'lang': ['it']
