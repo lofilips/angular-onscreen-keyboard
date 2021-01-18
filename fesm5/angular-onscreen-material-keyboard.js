@@ -2659,7 +2659,7 @@ var keyboardLayouts = {
                 ['j', 'J'],
                 ['k', 'K'],
                 ['l', 'L'],
-                ['\u00f2', '\u00e7', '@'],
+                ['\u00f2', '@'],
                 ['\u00e0', '\u00b0', '#'],
                 [KeyboardClassKey.Enter, KeyboardClassKey.Enter, KeyboardClassKey.Enter, KeyboardClassKey.Enter]
             ],
