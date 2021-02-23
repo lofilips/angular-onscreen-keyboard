@@ -7153,7 +7153,6 @@ let MatKeyboardKeyComponent = class MatKeyboardKeyComponent {
     }
     onTouchEnd(event) {
         if (event) {
-            console.log(event);
             event.preventDefault();
         }
     }
@@ -7234,8 +7233,6 @@ let MatKeyboardKeyComponent = class MatKeyboardKeyComponent {
         this.cancelRepeat();
     }
     onClick(event) {
-        event.preventDefault();
-        event.stopPropagation();
         // Trigger generic click event
         this.genericClick.emit(event);
         // Do not execute keypress if key is currently repeating
