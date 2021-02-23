@@ -7176,6 +7176,12 @@ var MatKeyboardKeyComponent = /** @class */ (function () {
         this.tabClick = new EventEmitter();
         this.keyClick = new EventEmitter();
     }
+    MatKeyboardKeyComponent.prototype.onTouchEnd = function (event) {
+        if (event) {
+            console.log(event);
+            event.preventDefault();
+        }
+    };
     Object.defineProperty(MatKeyboardKeyComponent.prototype, "active", {
         get: function () {
             return this.active$.getValue();
@@ -7553,6 +7559,9 @@ var MatKeyboardKeyComponent = /** @class */ (function () {
     MatKeyboardKeyComponent.ctorParameters = function () { return [
         { type: undefined, decorators: [{ type: Inject, args: [MAT_KEYBOARD_DEADKEYS,] }] }
     ]; };
+    __decorate([
+        HostListener('touchend', ['$event'])
+    ], MatKeyboardKeyComponent.prototype, "onTouchEnd", null);
     __decorate([
         Input()
     ], MatKeyboardKeyComponent.prototype, "key", void 0);

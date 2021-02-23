@@ -7151,6 +7151,12 @@ let MatKeyboardKeyComponent = class MatKeyboardKeyComponent {
         this.tabClick = new EventEmitter();
         this.keyClick = new EventEmitter();
     }
+    onTouchEnd(event) {
+        if (event) {
+            console.log(event);
+            event.preventDefault();
+        }
+    }
     set active(active) {
         this.active$.next(active);
     }
@@ -7474,6 +7480,9 @@ let MatKeyboardKeyComponent = class MatKeyboardKeyComponent {
 MatKeyboardKeyComponent.ctorParameters = () => [
     { type: undefined, decorators: [{ type: Inject, args: [MAT_KEYBOARD_DEADKEYS,] }] }
 ];
+__decorate([
+    HostListener('touchend', ['$event'])
+], MatKeyboardKeyComponent.prototype, "onTouchEnd", null);
 __decorate([
     Input()
 ], MatKeyboardKeyComponent.prototype, "key", void 0);
