@@ -7495,6 +7495,7 @@
         };
         MatKeyboardKeyComponent.prototype.onClick = function (event) {
             var _this = this;
+            event.preventDefault();
             // Trigger generic click event
             this.genericClick.emit(event);
             // Do not execute keypress if key is currently repeating

@@ -7228,6 +7228,7 @@ let MatKeyboardKeyComponent = class MatKeyboardKeyComponent {
         this.cancelRepeat();
     }
     onClick(event) {
+        event.preventDefault();
         // Trigger generic click event
         this.genericClick.emit(event);
         // Do not execute keypress if key is currently repeating

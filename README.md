@@ -1,6 +1,6 @@
 # angular-onscreen-material-keyboard
 Onscreen virtual keyboard for [Angular] using [Angular Material].
-> Note that this is a fork of https://github.com/Iris0905/angular-onscreen-material-keyboard
+> Note that this is a fork of https://github.com/joskwanten/core
 
 ![ngx-material-keyboard in action](https://cdn.rawgit.com/ngx-material-keyboard/core/develop/screenshots/ngxmk-2.gif)
 
