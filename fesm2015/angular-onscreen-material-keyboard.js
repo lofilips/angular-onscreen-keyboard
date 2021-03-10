@@ -7161,8 +7161,8 @@ let MatKeyboardKeyComponent = class MatKeyboardKeyComponent {
                 this._touchEnd.setDate(this._touchEnd.getDate() + 1);
             }
             let diff = this._touchEnd - this._touchStart;
-            // se l'utente tiene premuto un tasto per più di 1 secondo
-            if ((diff / 1000) > 1) {
+            // se l'utente tiene premuto un tasto per più di mezzo secondo
+            if ((diff / 1000) > 0.5) {
                 event.preventDefault();
             }
         }
@@ -7174,8 +7174,8 @@ let MatKeyboardKeyComponent = class MatKeyboardKeyComponent {
                 this._touchEnd.setDate(this._touchEnd.getDate() + 1);
             }
             let diff = this._touchEnd - this._touchStart;
-            // se l'utente tiene premuto un tasto per più di 1 secondo
-            if ((diff / 1000) > 1) {
+            // se l'utente tiene premuto un tasto per più di mezzo secondo
+            if ((diff / 1000) > 0.5) {
                 event.preventDefault();
             }
         }
