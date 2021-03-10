@@ -7151,9 +7151,19 @@ let MatKeyboardKeyComponent = class MatKeyboardKeyComponent {
         this.tabClick = new EventEmitter();
         this.keyClick = new EventEmitter();
     }
-    onTouchEnd(event) {
-        if (event) {
+    onTouchStart(event) {
+        this._timer = setTimeout(() => {
             event.preventDefault();
+        }, 1000);
+    }
+    onTouchEnd(event) {
+        if (this._timer) {
+            clearTimeout(this._timer);
+        }
+    }
+    onTouchMove(event) {
+        if (this._timer) {
+            clearTimeout(this._timer);
         }
     }
     set active(active) {
@@ -7478,8 +7488,14 @@ MatKeyboardKeyComponent.ctorParameters = () => [
     { type: undefined, decorators: [{ type: Inject, args: [MAT_KEYBOARD_DEADKEYS,] }] }
 ];
 __decorate([
+    HostListener('touchstart', ['$event'])
+], MatKeyboardKeyComponent.prototype, "onTouchStart", null);
+__decorate([
     HostListener('touchend', ['$event'])
 ], MatKeyboardKeyComponent.prototype, "onTouchEnd", null);
+__decorate([
+    HostListener('touchmove', ['$event'])
+], MatKeyboardKeyComponent.prototype, "onTouchMove", null);
 __decorate([
     Input()
 ], MatKeyboardKeyComponent.prototype, "key", void 0);

@@ -7176,9 +7176,19 @@ var MatKeyboardKeyComponent = /** @class */ (function () {
         this.tabClick = new EventEmitter();
         this.keyClick = new EventEmitter();
     }
-    MatKeyboardKeyComponent.prototype.onTouchEnd = function (event) {
-        if (event) {
+    MatKeyboardKeyComponent.prototype.onTouchStart = function (event) {
+        this._timer = setTimeout(function () {
             event.preventDefault();
+        }, 1000);
+    };
+    MatKeyboardKeyComponent.prototype.onTouchEnd = function (event) {
+        if (this._timer) {
+            clearTimeout(this._timer);
+        }
+    };
+    MatKeyboardKeyComponent.prototype.onTouchMove = function (event) {
+        if (this._timer) {
+            clearTimeout(this._timer);
         }
     };
     Object.defineProperty(MatKeyboardKeyComponent.prototype, "active", {
@@ -7557,8 +7567,14 @@ var MatKeyboardKeyComponent = /** @class */ (function () {
         { type: undefined, decorators: [{ type: Inject, args: [MAT_KEYBOARD_DEADKEYS,] }] }
     ]; };
     __decorate([
+        HostListener('touchstart', ['$event'])
+    ], MatKeyboardKeyComponent.prototype, "onTouchStart", null);
+    __decorate([
         HostListener('touchend', ['$event'])
     ], MatKeyboardKeyComponent.prototype, "onTouchEnd", null);
+    __decorate([
+        HostListener('touchmove', ['$event'])
+    ], MatKeyboardKeyComponent.prototype, "onTouchMove", null);
     __decorate([
         Input()
     ], MatKeyboardKeyComponent.prototype, "key", void 0);

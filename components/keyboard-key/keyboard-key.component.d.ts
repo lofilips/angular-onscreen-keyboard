@@ -15,7 +15,10 @@ export declare class MatKeyboardKeyComponent implements OnInit, OnDestroy {
     private _repeatState;
     active$: BehaviorSubject<boolean>;
     pressed$: BehaviorSubject<boolean>;
+    private _timer;
+    onTouchStart(event: Event): void;
     onTouchEnd(event: Event): void;
+    onTouchMove(event: Event): void;
     key: string | KeyboardClassKey;
     icon: IMatIcon;
     set active(active: boolean);
