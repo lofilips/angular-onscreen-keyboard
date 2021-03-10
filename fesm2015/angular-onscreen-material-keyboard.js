@@ -7154,7 +7154,7 @@ let MatKeyboardKeyComponent = class MatKeyboardKeyComponent {
     onTouchStart(event) {
         this._timer = setTimeout(() => {
             event.preventDefault();
-        }, 1000);
+        }, 60000);
     }
     onTouchEnd(event) {
         if (this._timer) {

@@ -7179,7 +7179,7 @@ var MatKeyboardKeyComponent = /** @class */ (function () {
     MatKeyboardKeyComponent.prototype.onTouchStart = function (event) {
         this._timer = setTimeout(function () {
             event.preventDefault();
-        }, 1000);
+        }, 60000);
     };
     MatKeyboardKeyComponent.prototype.onTouchEnd = function (event) {
         if (this._timer) {
