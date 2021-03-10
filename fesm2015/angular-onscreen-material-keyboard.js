@@ -7152,18 +7152,32 @@ let MatKeyboardKeyComponent = class MatKeyboardKeyComponent {
         this.keyClick = new EventEmitter();
     }
     onTouchStart(event) {
-        this._timer = setTimeout(() => {
-            event.preventDefault();
-        }, 60000);
+        this._touchStart = new Date();
     }
     onTouchEnd(event) {
-        if (this._timer) {
-            clearTimeout(this._timer);
+        if (this._touchStart) {
+            this._touchEnd = new Date();
+            if (this._touchEnd < this._touchStart) {
+                this._touchEnd.setDate(this._touchEnd.getDate() + 1);
+            }
+            let diff = this._touchEnd - this._touchStart;
+            // se l'utente tiene premuto un tasto per più di 1 secondo
+            if ((diff / 1000) > 1) {
+                event.preventDefault();
+            }
         }
     }
     onTouchMove(event) {
-        if (this._timer) {
-            clearTimeout(this._timer);
+        if (this._touchStart) {
+            this._touchEnd = new Date();
+            if (this._touchEnd < this._touchStart) {
+                this._touchEnd.setDate(this._touchEnd.getDate() + 1);
+            }
+            let diff = this._touchEnd - this._touchStart;
+            // se l'utente tiene premuto un tasto per più di 1 secondo
+            if ((diff / 1000) > 1) {
+                event.preventDefault();
+            }
         }
     }
     set active(active) {

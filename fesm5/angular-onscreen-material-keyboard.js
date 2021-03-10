@@ -7177,18 +7177,32 @@ var MatKeyboardKeyComponent = /** @class */ (function () {
         this.keyClick = new EventEmitter();
     }
     MatKeyboardKeyComponent.prototype.onTouchStart = function (event) {
-        this._timer = setTimeout(function () {
-            event.preventDefault();
-        }, 60000);
+        this._touchStart = new Date();
     };
     MatKeyboardKeyComponent.prototype.onTouchEnd = function (event) {
-        if (this._timer) {
-            clearTimeout(this._timer);
+        if (this._touchStart) {
+            this._touchEnd = new Date();
+            if (this._touchEnd < this._touchStart) {
+                this._touchEnd.setDate(this._touchEnd.getDate() + 1);
+            }
+            var diff = this._touchEnd - this._touchStart;
+            // se l'utente tiene premuto un tasto per più di 1 secondo
+            if ((diff / 1000) > 1) {
+                event.preventDefault();
+            }
         }
     };
     MatKeyboardKeyComponent.prototype.onTouchMove = function (event) {
-        if (this._timer) {
-            clearTimeout(this._timer);
+        if (this._touchStart) {
+            this._touchEnd = new Date();
+            if (this._touchEnd < this._touchStart) {
+                this._touchEnd.setDate(this._touchEnd.getDate() + 1);
+            }
+            var diff = this._touchEnd - this._touchStart;
+            // se l'utente tiene premuto un tasto per più di 1 secondo
+            if ((diff / 1000) > 1) {
+                event.preventDefault();
+            }
         }
     };
     Object.defineProperty(MatKeyboardKeyComponent.prototype, "active", {
